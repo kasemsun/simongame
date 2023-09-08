@@ -1,13 +1,3 @@
-// $(document).ready(function(){
-//     $("h1").addClass("big-title margin-50");
-// });
-
-// console.log($("button"));
-
-// $(document).keypress(function(e){
-//     console.log(e.key);
-//     $("h1").html(e.key);
-// });
 let n = [];
 let seq = 0;
 // change title
