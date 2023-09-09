@@ -1,16 +1,21 @@
 body {
     text-align: center;
     background-color: #011F3F;
+    height: 100vh;
 }
+
 #level-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
-    margin: 5%;
+    font-size: 2.75rem;
     color: #FEF2BF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 5rem;
+    margin: 3rem;
 }
-h1 {
+.title {
     display: block;
-    font-size: 2em;
+    font-size: 4rem;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
@@ -18,20 +23,30 @@ h1 {
     font-weight: bold;
 }
 .container {
-    display: block;
-    width: 50%;
-    margin: auto;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    height: 70%;
 }
 
 .btn {
-    margin: 25px;
+    margin: 15px;
     display: inline-block;
     height: 200px;
     width: 200px;
     border: 10px solid black;
     border-radius: 20%;
+    cursor: pointer;
 }
+
+.btn-row {
+    display: flex;
+    flex-direction: column; /* Align elements vertically */
+    align-items: center; /* Horizontally center the elements */
+    justify-content: center; /* Vertically center the elements */
+}
+
 
 .game-over {
     background-color: red;
@@ -54,7 +69,37 @@ h1 {
     background-color: yellow;
 }
 
+.start-game{
+    background: linear-gradient(
+        to right,
+        red 20%,
+        green 70%,
+        yellow 20%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 350% auto;
+    animation: textShine 0.75s ease-in-out infinite alternate;
+}
+
 .pressed {
     box-shadow: 0 0 20px white;
     background-color: grey;
+}
+
+@media (max-width: 768px) {
+    .btn-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 75%;
+    }
+    100% {
+        background-position: 100% 25%;
+    }
 }

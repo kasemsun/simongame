@@ -1,11 +1,11 @@
 let n = [];
 let seq = 0;
 // change title
-$(document).keypress(function(e){
+$('#level-title').click(function(e){
     console.log(e.key);
     if(n.length === 0){
         randomButton();
-        $("h1").html('level ' + n.length);
+        $("#level-title").html('level ' + n.length).removeClass('start-game');
         seq = 0;
     }
     
@@ -74,18 +74,18 @@ $(".btn").click(function(){
         default:
             break;
     }
-    var isValid = checkbutton(check,seq);
+    let isValid = checkbutton(check,seq);
 
     if (isValid) {
         seq++;
         if (seq  === n.length) {
         randomButton();
-        $("h1").html('level ' + n.length);
+        $("#level-title").html('level ' + n.length);
         }
        
     }
     else{
-        var wrong = new Audio('https://londonappbrewery.github.io/Simon-Game/sounds/wrong.mp3'); 
+        let wrong = new Audio('https://londonappbrewery.github.io/Simon-Game/sounds/wrong.mp3'); 
         wrong.play();
 
         $("body").addClass("game-over");
@@ -94,7 +94,7 @@ $(".btn").click(function(){
         }, 500);
 
         
-        $("h1").html('Game Over, Press Any Key to Restart');
+        $("#level-title").html('Game Over, Press this to Restart');
         seq = 0;
         n = [];
     }
